@@ -18,7 +18,8 @@ class Profile(models.Model):
     col_name =models.CharField("College Name:",max_length=20,choices= COLLEGES)
     birth_date = models.DateField()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
-
+    def __str__(self):
+        return self.user.username
 # @receiver(post_save, sender=User)
 # def create_user_profile(sender, instance, created, **kwargs):
 #     if created:
